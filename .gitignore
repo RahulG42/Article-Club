@@ -1,0 +1,10 @@
+article-club-frontend/article-club-frontend/*.vscode/extensions.json
+article-club-frontend/article-club-frontend/node_modules
+#Backend
+backend_Articale_Club_Nodejs/node_modules
+backend_Articale_Club_Nodejs/.env
+#
+.vscode
+node_modules
+tsconfig.spec.json
+.angular

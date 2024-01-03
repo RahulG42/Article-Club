@@ -1,0 +1,133 @@
+<!-- <mat-toolbar  [color]="themeService.getTheme()">
+<button mat-icon-button *ngIf="sidenav.mode=='side'" (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sideNav.opened">Menu</mat-icon>
+    <mat-icon *ngIf="sideNav.opened">Menu</mat-icon>
+</button>
+
+    Article Hub
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>palette</mat-icon>
+    </button>
+
+    <mat-menu #menu="matMenu">
+        <button mat-fab color="primary" class="button-margin" (click)="changeTheme('primary')">
+            <mat-icon *ngIf="themeService.getTheme()==='primary'">done</mat-icon>
+        </button>
+
+        <button mat-fab color="accent" class="button-margin" (click)="changeTheme('accent')">
+            <mat-icon *ngIf="themeService.getTheme()==='accent'">done</mat-icon>
+        </button>
+
+        <button mat-fab color="warn" class="button-margin" (click)="changeTheme('warn')">
+            <mat-icon *ngIf="themeService.getTheme()==='warn'">done</mat-icon>
+        </button>
+    </mat-menu>
+
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" opened="true" mode="side">
+        <img class="avtar mat-elevation-z8" src="../../../assets/profile.png">
+
+        <mat-divider class="custom-divider"></mat-divider>
+
+        <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/articleHub/dashboard">
+            <mat-icon>home</mat-icon>
+            <span>dashboard</span>
+        </button>
+
+        <mat-divider class="custom-divider"></mat-divider>
+
+        <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/articleHub/dashboard">
+            <mat-icon>help</mat-icon>
+            <span>help</span>
+        </button>
+    </mat-sidenav>
+
+    <mat-sidenav-content></mat-sidenav-content>
+</mat-sidenav-container>
+
+ -->
+
+ <mat-toolbar [color]="themeService.getTheme()">
+    <button mat-icon-button *ngIf="sidenav.mode=='side'" (click)="sidenav.toggle()">
+      <mat-icon *ngIf="!sidenav.opened">list</mat-icon>
+      <mat-icon *ngIf="sidenav.opened">list</mat-icon>
+    </button>
+  
+    Article Club
+    <span class="spacer"></span>
+  
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>palette</mat-icon>
+    </button>
+  
+    <mat-menu #menu="matMenu">
+      <button mat-fab color="primary" class="button-margin" (click)="changeTheme('primary')">
+        <mat-icon *ngIf="themeService.getTheme()==='primary'">done</mat-icon>
+      </button>
+  
+      <button mat-fab color="accent" class="button-margin" (click)="changeTheme('accent')">
+        <mat-icon *ngIf="themeService.getTheme()==='accent'">done</mat-icon>
+      </button>
+  
+      <button mat-fab color="warn" class="button-margin" (click)="changeTheme('warn')">
+        <mat-icon *ngIf="themeService.getTheme()==='warn'">done</mat-icon>
+      </button>
+    </mat-menu>
+
+    <!-- <button mat-icon-button (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button> -->
+
+    <button mat-icon-button (click)="openLogoutConfirmationDialog()">
+      <mat-icon>exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" opened="true" mode="side">
+      <img class="avatar mat-elevation-z8" src="../../../assets/profile.png">
+      <mat-divider class="custom-divider"></mat-divider>
+      
+      <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/articleHub/dashboard">
+        <mat-icon>home</mat-icon>
+        <span>dashboard</span>
+      </button>
+
+
+      <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/articleHub/users">
+        <mat-icon>group</mat-icon>
+        <span>Users</span>
+      </button>
+
+
+      <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/articleHub/category">
+        <mat-icon>apartment</mat-icon>
+        <span>category</span>
+      </button>
+
+      <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/articleHub/article">
+        <mat-icon>Storage</mat-icon>
+        <span>Article</span>
+      </button>
+      
+      <mat-divider class="custom-divider"></mat-divider>
+      
+      <button mat-button class="menu-button" [color]="themeService.getTheme()" routerLinkActive="active" routerLink="/articleHub/help">
+        <mat-icon>help</mat-icon>
+        <span>help</span>
+      </button>
+    </mat-sidenav>
+  
+    <mat-sidenav-content style="background: radial-gradient(red),#332042;">
+      <div class="content mat-elevation-z8" style="background:white;">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+
+

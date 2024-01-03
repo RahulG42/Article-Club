@@ -1,0 +1,39 @@
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <mat-icon>lock</mat-icon>
+        </div>
+    
+
+    <div style="text-align:center !important; margin-bottom:5px;"> Article club
+    </div>
+
+    <form [formGroup]="loginForm">
+        <div fxFlex fxLayout="column">
+            <mat-form-field appearance="outline" fxline [color]="themeService.getTheme()">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email"  required>
+                <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+                    <span *ngIf="loginForm.controls.email.errors.required"> This field is required</span>
+                    <span *ngIf="loginForm.controls.email.errors.pattern">This field is invalid</span>
+                </mat-error>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline" fxline [color]="themeService.getTheme()">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password"  required>
+                <mat-error *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid">
+                    <span *ngIf="loginForm.controls.password.errors.required"> This field is required</span>
+                    <span *ngIf="loginForm.controls.password.errors.pattern">This field is invalid</span>
+                </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button [disabled]="!(loginForm.valid && loginForm.dirty)"  [color]="themeService.getTheme()" (click)="handleSubmit()">Login</button>
+        </div>
+    </form>
+    <div class="home-link">
+        <span (click)="onBack()"><span styles="color:blue; cursor:pointer;"></span></span>
+    </div>
+</div>
+</body>
